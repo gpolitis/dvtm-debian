@@ -1,10 +1,10 @@
 Source: dvtm
 Section: utils
 Priority: extra
-Maintainer: Albin Tonnerre <albin.tonnerre@gmail.com>
+Maintainer: Albin Tonnerre <lutin@debian.org>
 Uploaders: Xavier Oswald <xoswald@debian.org>
-Build-Depends: debhelper (>= 7.0.50~), libncursesw5-dev
-Standards-Version: 3.9.1
+Build-Depends: debhelper (>= 9), libncursesw5-dev
+Standards-Version: 3.9.5
 Homepage: http://www.brain-dump.org/projects/dvtm
 
 Package: dvtm
