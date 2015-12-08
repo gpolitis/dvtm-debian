@@ -1,3 +1,9 @@
+dvtm (0.14-2) unstable; urgency=medium
+
+  * cflags_and_strip_fixes.diff: fixes build
+
+ -- George Politis <gp@jitsi.org>  Mon, 07 Dec 2015 19:30:33 +0200
+
 dvtm (0.14-1) unstable; urgency=medium
 
   * New upstream release
