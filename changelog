@@ -1,3 +1,10 @@
+dvtm (0.14-1) unstable; urgency=medium
+
+  * New upstream release
+  * cflags_and_strip_fixes.diff: unrot
+
+ -- George Politis <gp@jitsi.org>  Mon, 07 Dec 2015 19:16:51 +0200
+
 dvtm (0.12-1) unstable; urgency=medium
 
   * New upstream release (Closes: #760607)

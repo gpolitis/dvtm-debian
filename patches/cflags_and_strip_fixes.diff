@@ -1,5 +1,5 @@
 diff --git a/Makefile b/Makefile
-index abef9a9..2ecd2fc 100644
+index 09d1080..7ccee59 100644
 --- a/Makefile
 +++ b/Makefile
 @@ -43,8 +43,6 @@ dist: clean
@@ -7,29 +7,27 @@ index abef9a9..2ecd2fc 100644
  
  install: dvtm
 -	@echo stripping executable
--	@strip -s dvtm
+-	@${STRIP} dvtm
  	@echo installing executable file to ${DESTDIR}${PREFIX}/bin
  	@mkdir -p ${DESTDIR}${PREFIX}/bin
  	@cp -f dvtm ${DESTDIR}${PREFIX}/bin
 diff --git a/config.mk b/config.mk
-index 05106e5..e957080 100644
+index 273aa45..873c188 100644
 --- a/config.mk
 +++ b/config.mk
-@@ -3,7 +3,7 @@ VERSION = 0.12
+@@ -3,13 +3,13 @@ VERSION = 0.14
  
  # Customize below to fit your system
  
--PREFIX = /usr/local
-+PREFIX = /usr
+-PREFIX ?= /usr/local
++PREFIX ?= /usr
  MANPREFIX = ${PREFIX}/share/man
+ # specify your systems terminfo directory
+ # leave empty to install into your home folder
+ TERMINFO := ${DESTDIR}${PREFIX}/share/terminfo
  
- INCS = -I.
-@@ -13,7 +13,7 @@ LIBS = -lc -lutil -lncursesw
- # AIX
- #LIBS = -lc -lncursesw
- # Cygwin
--#INCS += -I/usr/include/ncurses
-+INCS += -I/usr/include/ncursesw
- 
- CFLAGS += -std=c99 -Os ${INCS} -DVERSION=\"${VERSION}\" -DNDEBUG
- LDFLAGS += ${LIBS}
+-INCS = -I.
++INCS = -I. -I/usr/includes/ncursesw
+ LIBS = -lc -lutil -lncursesw
+ CPPFLAGS = -D_POSIX_C_SOURCE=200809L -D_XOPEN_SOURCE=700 -D_XOPEN_SOURCE_EXTENDED
+ CFLAGS += -std=c99 ${INCS} -DVERSION=\"${VERSION}\" -DNDEBUG ${CPPFLAGS}
